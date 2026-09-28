@@ -1,3 +1,5 @@
+import { PlannerRun } from "@/components/PlannerRun";
+
 const departments = [
   ["Finance", "Close, reconciliation, approval queues"],
   ["HR", "Headcount changes and policy gates"],
@@ -42,20 +44,14 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#planner-inputs"
+              href="#planner-run"
               className="inline-flex min-h-11 items-center rounded-full bg-blue-400 px-5 py-2.5 text-sm font-semibold text-slate-950"
             >
-              Read the six inputs
-            </a>
-            <a
-              href="#planner-result"
-              className="inline-flex min-h-11 items-center rounded-full border border-slate-700 px-5 py-2.5 text-sm text-slate-200"
-            >
-              See the sample map
+              Run the planner
             </a>
           </div>
           <p className="mt-3 max-w-xl text-xs text-slate-500">
-            This page is the published prototype. Separate planner, dashboard, and pricing routes are not in the published repository, so the buttons stay on this page.
+            The six inputs below run the operating-map model in the browser. Prisma persistence and the separate dashboard stay out of this branch.
           </p>
         </div>
 
@@ -138,6 +134,7 @@ export default function Home() {
         ))}
       </section>
 
+      <PlannerRun />
       <p className="mt-12 text-center text-sm text-slate-500">
         Pricing is not published on this page. The sample map above is not a quote.
       </p>
