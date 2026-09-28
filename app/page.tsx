@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const departments = [
   ["Finance", "Close, reconciliation, approval queues"],
   ["HR", "Headcount changes and policy gates"],
@@ -43,19 +41,22 @@ export default function Home() {
             production customers.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/planner"
+            <a
+              href="#planner-inputs"
               className="inline-flex min-h-11 items-center rounded-full bg-blue-400 px-5 py-2.5 text-sm font-semibold text-slate-950"
             >
-              Run operations planner
-            </Link>
-            <Link
-              href="/dashboard"
+              Read the six inputs
+            </a>
+            <a
+              href="#planner-result"
               className="inline-flex min-h-11 items-center rounded-full border border-slate-700 px-5 py-2.5 text-sm text-slate-200"
             >
-              Open module map
-            </Link>
+              See the sample map
+            </a>
           </div>
+          <p className="mt-3 max-w-xl text-xs text-slate-500">
+            This page is the published prototype. Separate planner, dashboard, and pricing routes are not in the published repository, so the buttons stay on this page.
+          </p>
         </div>
 
         <aside
@@ -80,7 +81,7 @@ export default function Home() {
         </aside>
       </div>
 
-      <section className="mt-16">
+      <section id="planner-inputs" className="mt-16">
         <h2 className="text-2xl font-semibold text-white">What the planner actually asks</h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400">
           The command center form is the product: six constraints in, an operating
@@ -100,12 +101,12 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="mt-16">
+      <section id="planner-result" className="mt-16">
         <h2 className="text-2xl font-semibold text-white">What a planner run returns</h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400">
           A sample output for a 51–200 person company with close pressure: bottleneck
           radar plus a module sequence. Savings figures on generated reports are
-          estimates from that sketch — open <Link href="/planner" className="text-blue-300 hover:underline">/planner</Link> to run your own.
+          estimates from that sketch. This page does not run a second planner.
         </p>
         <div className="mt-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/70">
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.16em] text-cyan-200/80">
@@ -137,10 +138,8 @@ export default function Home() {
         ))}
       </section>
 
-      <p className="mt-12 text-center text-sm">
-        <Link href="/pricing" className="text-blue-300 hover:underline">
-          Enterprise pricing →
-        </Link>
+      <p className="mt-12 text-center text-sm text-slate-500">
+        Pricing is not published on this page. The sample map above is not a quote.
       </p>
     </main>
   );
