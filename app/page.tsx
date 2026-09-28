@@ -28,17 +28,15 @@ export default function Home() {
       <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
         <div>
           <p className="inline-flex rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-xs text-blue-200">
-            Prototype · AI ERP planner
+            Preview · operating map
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Map where finance, HR, procurement, and inventory stall — before ERP sprawl multiplies it.
           </h1>
           <p className="mt-4 max-w-xl text-slate-400">
             AutoERP is a command-center planner for enterprise operations. You
-            describe the company shape; it produces an operating map, bottleneck
-            radar, and a sequenced deployment sketch. This is a working prototype
-            in the browser, not a live ERP replacement and not a claim of
-            production customers.
+            describe the company shape and see an operating map, a bottleneck
+            radar, and a sequenced deployment sketch.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -51,7 +49,7 @@ export default function Home() {
               href="#planner-result"
               className="inline-flex min-h-11 items-center rounded-full border border-slate-700 px-5 py-2.5 text-sm text-slate-200"
             >
-              See the sample map
+              See the operating map
             </a>
           </div>
           <p className="mt-3 max-w-xl text-xs text-slate-500">
@@ -104,7 +102,7 @@ export default function Home() {
       <section id="planner-result" className="mt-16">
         <h2 className="text-2xl font-semibold text-white">What a planner run returns</h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400">
-          A sample output for a 51–200 person company with close pressure: bottleneck
+          An operating map for a 51–200 person company with close pressure: bottleneck
           radar plus a module sequence. Savings figures on generated reports are
           estimates from that sketch. This page does not run a second planner.
         </p>
@@ -129,7 +127,7 @@ export default function Home() {
         {[
           ["Operating map", "Finance, HR, procurement, inventory, and operations on one handoff board — before a second ERP module lands."],
           ["Approval fabric", "Name the queue slowing close, hire, buy, or ship. The planner asks for the bottleneck by name."],
-          ["Deployment sketch", "Sequence modules from the six inputs, then verify against your own books. Not a live ERP cutover."],
+          ["Deployment sketch", "Sequence modules from the six inputs, then check the sketch against your own books."],
         ].map(([title, copy]) => (
           <article key={title} className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5">
             <h2 className="text-base font-semibold text-white">{title}</h2>
@@ -139,7 +137,7 @@ export default function Home() {
       </section>
 
       <p className="mt-12 text-center text-sm text-slate-500">
-        Pricing is not published on this page. The sample map above is not a quote.
+        A planning sketch for the shape of the company.
       </p>
     </main>
   );
