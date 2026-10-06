@@ -1,5 +1,3 @@
-# Autoerp
-
 <p align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero/hero-reduced.svg">
@@ -8,42 +6,45 @@
   </picture>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero/computational-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/hero/computational-light.svg">
-    <img src="assets/hero/computational-motion.svg" alt="State machine: capital &rarr; allocate &rarr; mark &rarr; settle." width="100%">
-  </picture>
-</p>
+# AutoERP
 
-**STATUS: EXPERIMENTAL**
+**AutoERP MVP: AI ERP command center for finance, HR, procurement, inventory, and operations.**
 
-Startup portfolio: autoerp
-
-## Why it exists
-
-> Nothing in this table is inferred. Where a value could not be read from the repository it says so.
-
-## What is in it
+## What is actually here
 
 | | |
 | --- | --- |
-| Source files | 1 |
-| Test files | 0 |
-| Documentation files | 4 |
-| CI workflows | 0 |
-| Build manifest | none |
+| Language | TypeScript, JavaScript |
+| Build | `package.json` |
+| Tests | none present |
+| CI | none present |
+| Entry points | `app/page.tsx` |
+| Category | Finance |
 
-Observed: 1 source file(s).
+## Why this README looks like this
 
-## Build and run
+This file was generated from the repository's own source tree rather than
+written by hand. Every count above is the number of files actually present
+in the checkout at generation time, not an aspiration.
 
-No build manifest at the repository root. Inspect the tree before assuming a build step.
+An earlier version of this file was framework generator output, which
+describes the command used to create a directory rather than the system
+inside it. It was replaced for that reason.
 
-## Evidence
+Documentation surface: 4 project documents in the repository.
 
-Counts above are counted from the repository tree, not asserted. Where a value could not be measured it is omitted rather than estimated.
+## How it behaves
+
+Capital enters, allocates across positions, and settles into an outcome.
+
+Architecture: data flow.
+
+## Status
+
+Source of truth: the local checkout. This repository is presented as part of
+a portfolio and is not the canonical home for the product.
 
 ---
 
-Part of the DUNG30N5 × NOAERTH portfolio. Repository: [`M4G3LL4N0/autoerp`](https://github.com/M4G3LL4N0/autoerp).
+Part of the DUNG30N5 x NOAERTH portfolio. Repository:
+[`M4G3LL4N0/autoerp`](https://github.com/M4G3LL4N0/autoerp).
