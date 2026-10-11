@@ -1,95 +1,62 @@
-# autoerp
+# AutoERP
 
-> Modern ERP intelligence for operations teams outgrowing legacy stacks. Built in Prisma, Zod. 19 routes (/about, /api/command, /contact); 1 entry point (index.html). PROTOTYPE. No test suite committed.
+> Turn an operating constraint into an inspectable map.
 
-The implementation summary below is intentionally conservative. Claims from NORTHSTAR are not presented as shipped functionality.
+A deterministic ERP planning prototype that turns a company profile and operating constraint into a department map, bottleneck analysis, estimated opportunities, and a staged deployment roadmap.
 
-- [GitHub repository](https://github.com/M4G3LL4N0/autoerp)
-- [Project site](https://autoerp-public.vercel.app/)
+[Demo route](https://autoerp.vercel.app/demo) · [NOAERTH](https://www.noaerth.com)
 
-<!-- NOAERTH_IMAGE_SLOT: autoerp/hero -->
+![AutoERP operations observatory](assets/images/hero.svg)
 
-## What it is
+## The planner, not a production ERP
 
-Modern ERP intelligence for operations teams outgrowing legacy stacks. Built in Prisma, Zod. 19 routes (/about, /api/command, /contact); 1 entry point (index.html). PROTOTYPE. No test suite committed.
+AutoERP is a prototype for the earliest ERP decision: where are the bottlenecks, which departments connect, and what would a staged deployment need to address? A user selects company size, departments, workflow focus, bottleneck, procurement complexity, and inventory profile. A validated command produces a stored run and a dashboard result.
 
-This repository is part of the NOAERTH venture ecosystem. The current public-facing evidence identifies it as a prototype / active development rather than a production-ready system.
+![AutoERP planner flow](assets/images/planner-flow.svg)
 
-## Capabilities
-
-### Available evidence
-
-- The repository contains the implementation and documentation associated with the project description above.
-- The technology signals currently visible in the local project are listed in the technical notes below.
-- No additional capability is asserted here without a direct implementation reference.
-
-### Experimental or planned
-
-Roadmap intent is deliberately not represented as shipped functionality. Review NORTHSTAR and source implementation together before adding future-facing claims.
-
-<!-- NOAERTH_IMAGE_SLOT: autoerp/workflow -->
-
-## How it works
-
-The current evidence supports a repository-level application or tool workflow, but does not provide enough verified detail in the Part 1 record to publish a component-level architecture diagram. The architecture slot is reserved for a deterministic diagram after the source flow is reviewed.
-
-<!-- NOAERTH_IMAGE_SLOT: autoerp/architecture -->
+The planner returns complexity and risk scores, department connections, automation opportunities, bottleneck stages, procurement and inventory estimates, financial-operation estimates, a four-phase roadmap, and a recommended tier. These are deterministic, rules-based estimates from `runEnterprisePlanner()`, not external AI output or validated financial forecasts.
 
 ## Quick start
 
-### Prerequisites
-
-- A runtime suitable for `Node.js`.
-- A clean checkout of this repository.
-
-### Install
-
-```sh
-pnpm install
+```bash
+`pnpm install`
+`pnpm db:push`
+`pnpm dev`
+`pnpm build`
 ```
 
-### Run locally
+The default build pushes a local SQLite schema through Prisma. The core API surface is `POST /api/command`, `GET /api/command`, and `GET /api/command/[id]`.
 
-```sh
-pnpm run dev
-```
+## Architecture
 
-### Build
+Next.js App Router + React + TypeScript + Zod + Prisma 6 + SQLite + local deterministic planner
 
-```sh
-pnpm run build
-```
+![AutoERP architecture](assets/images/architecture.svg)
 
-Commands are included only when they were detected in the repository manifest; verify environment-specific requirements before deployment.
+There is no authentication or tenant isolation in the inspected implementation. The dashboard should therefore be treated as a local prototype surface, not as a place for real company data.
 
-## Technical notes
+## Evidence snapshot
 
-- **Primary language:** JavaScript/TypeScript
-- **Runtime:** Node.js
-- **Package manager:** pnpm
-- **Framework and integration signals:** See the source tree and package manifests; no framework claim is made here without a direct implementation reference.
-- **Entry-point signals:** package.json
-- **Test evidence:** TEST_PLAN.md
-- **Repository topics:** `typescript`, `app`, `components`, `dung30n5`, `next-js`, `noaerth`, `prisma`, `prototype`
+| Evidence | Interpretation |
+|---|---|
+| 2 command API handlers | Source-backed; see `v4/VERIFIED_METRICS.json` for definition and status. |
+| 0 local test files found | Source-backed; see `v4/VERIFIED_METRICS.json` for definition and status. |
+| 4 roadmap phases returned by the planner | Source-backed; see `v4/VERIFIED_METRICS.json` for definition and status. |
 
-## Status and roadmap
+## Boundaries
 
-**Current status:** Prototype / active development.
+- Prototype, not a production ERP.
+- Scores and savings are heuristic estimates.
+- No authentication, tenant isolation, export, or rate limiting found.
 
-**Current:** The repository and its documented implementation are available for inspection.
+## Source map
 
-**Next:** Reconcile the README, source behavior, and safe public product language before adding deeper examples or diagrams.
+- `app/planner/page.tsx`
+- `app/api/command/route.ts`
+- `src/lib/autoerp-engine.ts`
+- `src/lib/autoerp-data.ts`
+- `prisma/schema.prisma`
 
-**Future:** Product direction is maintained separately and must not be read as a shipped feature list.
+## Status and next step
 
-## Contributing and license
-
-Follow the repository's existing contribution and licensing files where present. This README does not invent an open-source license or contribution policy.
-
-## Visual documentation
-
-Image slots are intentionally comments until authentic screenshots, deterministic diagrams, or approved conceptual visuals exist. No absent image file is referenced.
-
-## NOAERTH
-
-[NOAERTH](https://www.noaerth.com) is the venture ecosystem associated with this project.
+Prototype / active development. The next credible step is to validate the planner with real users and instrument first-value behavior before describing savings or operational outcomes as measured.
